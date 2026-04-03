@@ -1,6 +1,6 @@
 import streamlit as st
 from langchain_community.llms import OpenAI
-
+import openai
 # -------------------------------
 # PAGE CONFIG
 # -------------------------------
@@ -13,7 +13,7 @@ st.set_page_config(
 # -------------------------------
 # TITLE
 # -------------------------------
-st.title("🍳 GeekCook || Recipe Recommendation System")
+st.title("Recipe Recommendation System")
 st.markdown("Get delicious recipes based on ingredients you have!")
 
 # -------------------------------
@@ -23,7 +23,6 @@ st.sidebar.header("🔑 API Configuration")
 
 import os
 openai_api_key = os.getenv("OPENAI_API_KEY")
-st.write("API KEY:", openai_api_key)
 # if not openai_api_key:
 #     st.error("API key not found. Please configure secrets.")
 #     st.stop()
